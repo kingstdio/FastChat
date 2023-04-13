@@ -264,9 +264,10 @@ def http_bot(state, model_selector, temperature, max_new_tokens, request: gr.Req
 
 
 notice_markdown = ("""
-# 🏔️ Chat with Open Large Language Models
+# 🏔️ This is BioGenius GPT Modified based-on Vicuna, and trained with Protein and Reaction Data
+#  
 - Vicuna: An Open-Source Chatbot Impressing GPT-4 with 90% ChatGPT Quality. [[Blog post]](https://vicuna.lmsys.org) [[GitHub]](https://github.com/lm-sys/FastChat)
-- Koala: A Dialogue Model for Academic Research. [[Blog post]](https://bair.berkeley.edu/blog/2023/04/03/koala/) [[GitHub]](https://github.com/young-geng/EasyLM)
+- LLaMA: MetaAI Original Model
 - This demo server. [[GitHub]](https://github.com/lm-sys/FastChat)
 
 ### Terms of use
