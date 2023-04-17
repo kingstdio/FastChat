@@ -1,3 +1,13 @@
+'''
+Author: Zhenkun Shi
+Date: 2023-04-13 19:18:02
+LastEditors: Zhenkun Shi
+LastEditTime: 2023-04-13 19:18:04
+FilePath: /preaction/3rdparty/FastChat/fastchat/model/make_delta.py
+Description: 
+
+Copyright (c) 2023 by tibd, All Rights Reserved. 
+'''
 """
 Make the delta weights by subtracting base weights.
 
@@ -13,8 +23,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def make_delta(base_model_path, target_model_path, delta_path):
     print(f"Loading the base model from {base_model_path}")
-    base = AutoModelForCausalLM.from_pretrained(
-        base_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
+    base = AutoModelForCausalLM.from_pretrained(base_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
 
     print(f"Loading the target model from {target_model_path}")
     target = AutoModelForCausalLM.from_pretrained(target_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)

@@ -1,3 +1,13 @@
+'''
+Author: Zhenkun Shi
+Date: 2023-04-13 19:15:56
+LastEditors: Zhenkun Shi
+LastEditTime: 2023-04-13 19:15:58
+FilePath: /preaction/3rdparty/FastChat/fastchat/model/apply_delta.py
+Description: 
+
+Copyright (c) 2023 by tibd, All Rights Reserved. 
+'''
 """
 Apply the delta weights on top of a base model.
 
@@ -13,10 +23,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def apply_delta(base_model_path, target_model_path, delta_path):
     print(f"Loading the base model from {base_model_path}")
-    base = AutoModelForCausalLM.from_pretrained(
-        base_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
-    base_tokenizer = AutoTokenizer.from_pretrained(
-        base_model_path, use_fast=False)
+    base = AutoModelForCausalLM.from_pretrained(base_model_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
+    base_tokenizer = AutoTokenizer.from_pretrained(base_model_path, use_fast=False)
 
     print(f"Loading the delta from {delta_path}")
     delta = AutoModelForCausalLM.from_pretrained(delta_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
